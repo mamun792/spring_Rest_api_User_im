@@ -12,6 +12,8 @@ public interface EmplyeService {
 
     public List<EmployeeDTO> findAll();
 
+    public List<EmployeeDTO> getAllEmplyees();
+
     public EmployeeDTO findById(Long id);
 
     public EmployeeDTO update(Long id, CreateEmployeeRequest createEmplyeRequest);

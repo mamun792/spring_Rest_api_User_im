@@ -75,4 +75,12 @@ public class EmplyeeServiceImpl implements EmplyeService {
         emplyeeRepository.deleteById(id);
 
     }
+
+    // query custom
+    @Override
+    public List<EmployeeDTO> getAllEmplyees() {
+        List<Employee> emplye = emplyeeRepository.getAllEmplyees();
+        return emplye.stream().map(e -> EmplyeeMapper.maToDto(e)).collect(Collectors.toList());
+    }
+
 }

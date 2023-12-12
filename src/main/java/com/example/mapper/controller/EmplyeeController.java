@@ -29,6 +29,13 @@ public class EmplyeeController {
         return ResponseEntity.ok(employeeDTOs);
     }
 
+    // custom query
+    @GetMapping("/all")
+    public ResponseEntity<List<EmployeeDTO>> getAllEmplyees() {
+        List<EmployeeDTO> employeeDTOs = emplyeService.getAllEmplyees();
+        return ResponseEntity.ok(employeeDTOs);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<EmployeeDTO> findById(@PathVariable Long id) {
         try {
